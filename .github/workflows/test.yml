@@ -1,0 +1,22 @@
+name: test
+
+on:
+  push:
+    branches:    
+      - main
+
+jobs:
+  runs-on: ubuntu-latest
+  first_job:
+    name: first_job
+    run: |
+      uname -a
+  second_job:
+    name: second_job
+    env:
+      MY_VAR: Hi there! My name is
+        FIRST_NAME: Mona
+        MIDDLE_NAME: The
+        LAST_NAME: Octocat
+    run: |
+        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
